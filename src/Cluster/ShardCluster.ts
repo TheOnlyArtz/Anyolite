@@ -1,6 +1,6 @@
 import { Client, ShardingManager } from "discord.js";
 
-export default class ShardWorker {
+export default class ShardCluster {
     public client: Client;
     public id: number;
 
