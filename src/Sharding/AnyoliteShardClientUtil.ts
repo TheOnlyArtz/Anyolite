@@ -32,4 +32,9 @@ export default class AnyoliteShardClientUtil {
       return this.ipc.managerIpcConnection!.send(data, options);
     return this.ipc.managerIpcConnection!.send({ op: IPCEvents.MESSAGE, d: data }, options);
   }
+
+  public broadcastEval(script: string | Function): Promise<unknown[]> {
+		return this.ipc.broadcast(script);
+	}
+
 }

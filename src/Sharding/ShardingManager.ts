@@ -45,8 +45,7 @@ export default class ShardingManager extends EventEmitter {
             }
 
             // const shardArray = [] [[0]]
-            // const shardTuple = getArrayAsChunks(this.shardList, this.clusterCount);
-            const shardTuple = [[0], [1]];
+            const shardTuple = splitArrayIntoChunksOfLen(this.shardList, Number(this.totalShards/this.clusterCount));
 
             for (let i = 0; i < this.clusterCount; i++) {
                 const shards = shardTuple.shift()!;
@@ -77,12 +76,10 @@ export default class ShardingManager extends EventEmitter {
     
 }
 
-const getArrayAsChunks = (array: any[], chunkSize: number) => {
-    let result = []
-    let data = array.slice(0)
-    while (data[0]) {
-      result.push(data.splice(0, chunkSize))
+function splitArrayIntoChunksOfLen(arr: any[], len: number) {
+    let chunks = [], i = 0, n = arr.length;
+    while (i < n) {
+      chunks.push(arr.slice(i, i += len));
     }
-    return result;
+    return chunks;
   }
-  
