@@ -7,4 +7,6 @@ export default interface IShardingManagerOptions {
     totalShards: number; // Represents the total shards accross all processes (including multi-server)
     client: typeof Client;
     clientOptions: ClientOptions;
+    managerIpcPort: number;
+    name: string;
 }
