@@ -1,0 +1,25 @@
+{
+  "name": "anyolite",
+  "version": "0.0.1",
+  "description": "A powerful shard manager for Discord.js built to scale both horizontally and vertically.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheOnlyArtz/Anyolite.git"
+  },
+  "author": "Amit Katz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheOnlyArtz/Anyolite/issues"
+  },
+  "homepage": "https://github.com/TheOnlyArtz/Anyolite#readme",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "discord.js": "^13.1.0",
+    "ts-node": "^10.2.1",
+    "veza": "^1.1.0"
+  }
+}
